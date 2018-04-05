@@ -1,0 +1,16 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+task fixTomcatBinPermission {
+    doLast {
+        def baseDir = "${project.hasProperty('liferay.workspace.home.dir') ? project.property('liferay.workspace.home.dir') : 'bundles'}"
+        if (Os.isFamily(Os.FAMILY_UNIX)) {
+            new File(baseDir + '/tomcat-8.0.32/bin').eachFileMatch(~/.*\.sh/) { file ->
+                exec {
+                    commandLine 'chmod', '+x', file.path
+                }
+            }
+        }
+    }
+}
+
+initBundle.finalizedBy fixTomcatBinPermission

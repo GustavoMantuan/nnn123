@@ -1,0 +1,66 @@
+gradle.allprojects {
+    plugins.withId("com.liferay.node") {
+        node.npmArgs = "--no-optional"
+    }
+
+    buildscript {
+        repositories {
+            mavenLocal()
+
+            maven {
+                url "https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/"
+            }
+
+            maven {
+                url "https://repository.liferay.com/nexus/content/groups/public/"
+            }
+
+            mavenCentral()
+            jcenter()
+        }
+
+        dependencies {
+            classpath group: "com.liferay", name: "com.liferay.gradle.util", version: "1.0.29"
+        }
+    }
+
+    repositories {
+        mavenLocal()
+
+        maven {
+            url "https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/"
+        }
+
+        maven {
+            url "https://repository.liferay.com/nexus/content/groups/public/"
+        }
+
+        mavenCentral()
+        jcenter()
+    }
+
+}
+
+buildscript {
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "1.6.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.lang.builder", version: "2.2.0"
+    }
+
+    repositories {
+        mavenLocal()
+
+        maven {
+            url "https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/"
+        }
+
+        maven {
+            url "https://repository.liferay.com/nexus/content/groups/public/"
+        }
+
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: "com.liferay.workspace"
