@@ -1,7 +1,7 @@
 package br.com.objective.worldcup.soy.portlet.action;
 
-import br.com.objective.worldcup.model.Group;
-import br.com.objective.worldcup.service.GroupLocalService;
+import com.objective.worldcup.model.Group;
+import com.objective.worldcup.service.GroupLocalService;
 import br.com.objective.worldcup.soy.constants.PortletPortletKeys;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;

@@ -1,7 +1,7 @@
 package br.com.objective.worldcup.soy.portlet.action;
 
-import br.com.objective.worldcup.model.Group;
-import br.com.objective.worldcup.service.GroupLocalService;
+import com.objective.worldcup.model.Group;
+import com.objective.worldcup.service.GroupLocalService;
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand;
 import com.liferay.portal.kernel.template.Template;

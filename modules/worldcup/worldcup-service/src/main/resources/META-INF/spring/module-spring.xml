@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean class="br.com.objective.worldcup.service.impl.GroupLocalServiceImpl" id="br.com.objective.worldcup.service.GroupLocalService" />
-	<bean class="br.com.objective.worldcup.service.impl.GroupServiceImpl" id="br.com.objective.worldcup.service.GroupService" />
-	<bean class="br.com.objective.worldcup.service.persistence.impl.GroupPersistenceImpl" id="br.com.objective.worldcup.service.persistence.GroupPersistence" parent="basePersistence" />
-	<bean class="br.com.objective.worldcup.service.impl.TeamLocalServiceImpl" id="br.com.objective.worldcup.service.TeamLocalService" />
-	<bean class="br.com.objective.worldcup.service.impl.TeamServiceImpl" id="br.com.objective.worldcup.service.TeamService" />
-	<bean class="br.com.objective.worldcup.service.persistence.impl.TeamPersistenceImpl" id="br.com.objective.worldcup.service.persistence.TeamPersistence" parent="basePersistence" />
+	<bean class="com.objective.worldcup.service.impl.GroupLocalServiceImpl" id="com.objective.worldcup.service.GroupLocalService" />
+	<bean class="com.objective.worldcup.service.impl.GroupServiceImpl" id="com.objective.worldcup.service.GroupService" />
+	<bean class="com.objective.worldcup.service.persistence.impl.GroupPersistenceImpl" id="com.objective.worldcup.service.persistence.GroupPersistence" parent="basePersistence" />
+	<bean class="com.objective.worldcup.service.impl.TeamLocalServiceImpl" id="com.objective.worldcup.service.TeamLocalService" />
+	<bean class="com.objective.worldcup.service.impl.TeamServiceImpl" id="com.objective.worldcup.service.TeamService" />
+	<bean class="com.objective.worldcup.service.persistence.impl.TeamPersistenceImpl" id="com.objective.worldcup.service.persistence.TeamPersistence" parent="basePersistence" />
 </beans>

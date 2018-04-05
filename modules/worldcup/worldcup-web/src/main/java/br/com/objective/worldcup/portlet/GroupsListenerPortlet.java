@@ -1,8 +1,8 @@
 package br.com.objective.worldcup.portlet;
 
 import br.com.objective.worldcup.constants.WorldCupPortletKeys;
-import br.com.objective.worldcup.model.Group;
-import br.com.objective.worldcup.service.GroupLocalService;
+import com.objective.worldcup.model.Group;
+import com.objective.worldcup.service.GroupLocalService;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;

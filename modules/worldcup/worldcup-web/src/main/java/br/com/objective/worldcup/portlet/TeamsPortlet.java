@@ -2,10 +2,11 @@ package br.com.objective.worldcup.portlet;
 
 import br.com.objective.worldcup.constants.WorldCupPortletKeys;
 
-import br.com.objective.worldcup.model.Team;
-import br.com.objective.worldcup.service.*;
+import com.objective.worldcup.model.Team;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
+import com.objective.worldcup.service.GroupLocalService;
+import com.objective.worldcup.service.TeamLocalService;
 import javax.portlet.*;
 
 import com.liferay.portal.kernel.servlet.SessionErrors;

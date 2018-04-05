@@ -17,7 +17,7 @@
 	/>
 
 	<liferay-ui:search-container-row
-		className="br.com.objective.worldcup.model.Team"
+		className="com.objective.worldcup.model.Team"
 		escapedModel="true"
 		modelVar="team"
 	>

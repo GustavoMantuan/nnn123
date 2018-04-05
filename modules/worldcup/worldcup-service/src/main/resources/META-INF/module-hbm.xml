@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping auto-import="false" default-lazy="false">
-	<import class="br.com.objective.worldcup.model.Group" />
-	<import class="br.com.objective.worldcup.model.Team" />
-	<class name="br.com.objective.worldcup.model.impl.GroupImpl" table="WorldCup_Group">
+	<import class="com.objective.worldcup.model.Group" />
+	<import class="com.objective.worldcup.model.Team" />
+	<class name="com.objective.worldcup.model.impl.GroupImpl" table="WorldCup_Group">
 		<id name="grpId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -17,7 +17,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="br.com.objective.worldcup.model.impl.TeamImpl" table="WorldCup_Team">
+	<class name="com.objective.worldcup.model.impl.TeamImpl" table="WorldCup_Team">
 		<id name="teamId" type="long">
 			<generator class="assigned" />
 		</id>

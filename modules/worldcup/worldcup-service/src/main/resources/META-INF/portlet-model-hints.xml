@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="br.com.objective.worldcup.model.Group">
+	<model name="com.objective.worldcup.model.Group">
 		<field name="uuid" type="String" />
 		<field name="grpId" type="long" />
 		<field name="groupId" type="long" />
@@ -12,7 +12,7 @@
 		<field name="modifiedDate" type="Date" />
 		<field name="name" type="String" />
 	</model>
-	<model name="br.com.objective.worldcup.model.Team">
+	<model name="com.objective.worldcup.model.Team">
 		<field name="uuid" type="String" />
 		<field name="teamId" type="long" />
 		<field name="groupId" type="long" />

@@ -8,10 +8,10 @@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %><%@
 taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 
-<%@ page import="br.com.objective.worldcup.model.Team" %>
-<%@ page import="br.com.objective.worldcup.model.Group" %>
-<%@ page import="br.com.objective.worldcup.service.TeamLocalService" %>
-<%@ page import="br.com.objective.worldcup.service.GroupLocalService" %>
+<%@ page import="com.objective.worldcup.model.Team" %>
+<%@ page import="com.objective.worldcup.model.Group" %>
+<%@ page import="com.objective.worldcup.service.TeamLocalService" %>
+<%@ page import="com.objective.worldcup.service.GroupLocalService" %>
 <%@ page import="com.liferay.portal.kernel.util.Constants" %>
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
