@@ -81,8 +81,64 @@ public class GroupServiceHttp {
 		}
 	}
 
+	public static com.objective.worldcup.model.Group addGroupWithoutId(
+		HttpPrincipal httpPrincipal, com.objective.worldcup.model.Group group) {
+		try {
+			MethodKey methodKey = new MethodKey(GroupServiceUtil.class,
+					"addGroupWithoutId", _addGroupWithoutIdParameterTypes1);
+
+			MethodHandler methodHandler = new MethodHandler(methodKey, group);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				throw new com.liferay.portal.kernel.exception.SystemException(e);
+			}
+
+			return (com.objective.worldcup.model.Group)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
+	public static java.util.List<com.objective.worldcup.model.Group> getAllGroups(
+		HttpPrincipal httpPrincipal) {
+		try {
+			MethodKey methodKey = new MethodKey(GroupServiceUtil.class,
+					"getAllGroups", _getAllGroupsParameterTypes2);
+
+			MethodHandler methodHandler = new MethodHandler(methodKey);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				throw new com.liferay.portal.kernel.exception.SystemException(e);
+			}
+
+			return (java.util.List<com.objective.worldcup.model.Group>)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(GroupServiceHttp.class);
 	private static final Class<?>[] _helloWorldParameterTypes0 = new Class[] {
 			java.lang.String.class
 		};
+	private static final Class<?>[] _addGroupWithoutIdParameterTypes1 = new Class[] {
+			com.objective.worldcup.model.Group.class
+		};
+	private static final Class<?>[] _getAllGroupsParameterTypes2 = new Class[] {  };
 }

@@ -41,6 +41,10 @@ public class GroupServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to {@link com.objective.worldcup.service.impl.GroupServiceImpl} and rerun ServiceBuilder to regenerate this class.
 	 */
+	public static com.objective.worldcup.model.Group addGroupWithoutId(
+		com.objective.worldcup.model.Group group) {
+		return getService().addGroupWithoutId(group);
+	}
 
 	/**
 	* Returns the OSGi service identifier.
@@ -53,6 +57,10 @@ public class GroupServiceUtil {
 
 	public static java.lang.String helloWorld(java.lang.String worldName) {
 		return getService().helloWorld(worldName);
+	}
+
+	public static java.util.List<com.objective.worldcup.model.Group> getAllGroups() {
+		return getService().getAllGroups();
 	}
 
 	public static GroupService getService() {

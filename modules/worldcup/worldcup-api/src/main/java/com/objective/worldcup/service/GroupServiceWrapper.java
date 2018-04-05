@@ -32,6 +32,12 @@ public class GroupServiceWrapper implements GroupService,
 		_groupService = groupService;
 	}
 
+	@Override
+	public com.objective.worldcup.model.Group addGroupWithoutId(
+		com.objective.worldcup.model.Group group) {
+		return _groupService.addGroupWithoutId(group);
+	}
+
 	/**
 	* Returns the OSGi service identifier.
 	*
@@ -45,6 +51,11 @@ public class GroupServiceWrapper implements GroupService,
 	@Override
 	public java.lang.String helloWorld(java.lang.String worldName) {
 		return _groupService.helloWorld(worldName);
+	}
+
+	@Override
+	public java.util.List<com.objective.worldcup.model.Group> getAllGroups() {
+		return _groupService.getAllGroups();
 	}
 
 	@Override

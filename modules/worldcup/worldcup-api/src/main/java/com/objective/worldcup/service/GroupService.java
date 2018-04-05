@@ -23,7 +23,12 @@ import com.liferay.portal.kernel.security.access.control.AccessControlled;
 import com.liferay.portal.kernel.service.BaseService;
 import com.liferay.portal.kernel.spring.osgi.OSGiBeanProperties;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
+
+import com.objective.worldcup.model.Group;
+
+import java.util.List;
 
 /**
  * Provides the remote service interface for Group. Methods of this
@@ -49,6 +54,7 @@ public interface GroupService extends BaseService {
 	 *
 	 * Never modify or reference this interface directly. Always use {@link GroupServiceUtil} to access the group remote service. Add custom service methods to {@link com.objective.worldcup.service.impl.GroupServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
+	public Group addGroupWithoutId(Group group);
 
 	/**
 	* Returns the OSGi service identifier.
@@ -58,4 +64,7 @@ public interface GroupService extends BaseService {
 	public java.lang.String getOSGiServiceIdentifier();
 
 	public java.lang.String helloWorld(java.lang.String worldName);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<Group> getAllGroups();
 }

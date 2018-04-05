@@ -79,5 +79,34 @@ public class GroupServiceSoap {
 		}
 	}
 
+	public static com.objective.worldcup.model.GroupSoap addGroupWithoutId(
+		com.objective.worldcup.model.GroupSoap group) throws RemoteException {
+		try {
+			com.objective.worldcup.model.Group returnValue = GroupServiceUtil.addGroupWithoutId(com.objective.worldcup.model.impl.GroupModelImpl.toModel(
+						group));
+
+			return com.objective.worldcup.model.GroupSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.objective.worldcup.model.GroupSoap[] getAllGroups()
+		throws RemoteException {
+		try {
+			java.util.List<com.objective.worldcup.model.Group> returnValue = GroupServiceUtil.getAllGroups();
+
+			return com.objective.worldcup.model.GroupSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(GroupServiceSoap.class);
 }
