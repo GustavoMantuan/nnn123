@@ -52,4 +52,8 @@ public class GroupLocalServiceImpl extends GroupLocalServiceBaseImpl {
         return getGroups(0, getGroupsCount());
     }
 
+    public Group updateGroup(Group group) {
+        return groupLocalService.updateGroup(group);
+    }
+
 }

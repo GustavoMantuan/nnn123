@@ -14,7 +14,9 @@
 
 package com.objective.worldcup.service.impl;
 
+import com.objective.worldcup.model.Group;
 import com.objective.worldcup.service.base.GroupServiceBaseImpl;
+import java.util.List;
 
 /**
  * The implementation of the group remote service.
@@ -40,5 +42,15 @@ public class GroupServiceImpl extends GroupServiceBaseImpl {
 	public String helloWorld(String worldName) {
 	    return "Hello world: " + worldName;
     }
+
+	public Group addGroupWithoutId(Group group) {
+		return groupLocalService.addGroupWithoutId(group);
+	}
+
+	public List<Group> getAllGroups() {
+		return groupLocalService.getAllGroups();
+	}
+
+
 
 }
