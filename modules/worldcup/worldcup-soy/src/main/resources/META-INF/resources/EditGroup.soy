@@ -1,0 +1,44 @@
+{namespace EditGroup}
+
+/**
+ * Prints the portlet main view.
+ */
+{template .render}
+	{@param id: string}
+	{@param portletNamespace: string}
+	{@param? grpId: string}
+	{@param? name: string}
+	{@param createGroupActionURL: string}
+    {@param viewGroupURL: string}
+
+    <div id="{$id}">
+
+        <h3>Edição Grupos</h3>
+
+        <form name="frm" method="post" action="{$createGroupActionURL}">
+            <input type="hidden" name="{$portletNamespace}grpId" value="{$grpId}"/>
+
+            <fieldset class="fieldset ">
+                <div class="">
+                    <div class="form-group input-String-wrapper">
+                        <label class="control-label" > Name </label>
+                        <input class="field form-control lfr-input-text" name="{$portletNamespace}name" value="{$name}" maxlength="75">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="button-holder ">
+                <button class="btn btn-primary btn-default" type="submit">
+                    <span class="lfr-btn-label">Save</span>
+                </button>
+
+                <a class="btn btn-cancel btn-default btn-link" href="{$viewGroupURL}">
+                    <span class="lfr-btn-label">Cancel</span>
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+{/template}

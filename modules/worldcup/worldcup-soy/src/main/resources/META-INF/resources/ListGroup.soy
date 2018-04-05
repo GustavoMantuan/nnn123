@@ -1,0 +1,96 @@
+{namespace ListGroup}
+
+/**
+ * Prints the portlet main view.
+ */
+{template .render}
+	{@param id: string}
+	{@param? addGroupURL: string}
+	{@param groups: list<[
+		grpId: int, 
+		name: string,
+		deleteGroupURL: string,
+		editGroupURL: string
+	]>}
+
+    {let $body kind="html"}
+        <b>Success</b>
+    {/let}
+
+    {let $closeButtonHtml kind="html"}
+        <span class="icon-16-cancel"></span>
+    {/let}
+
+	{call Alert.render}
+	    {param dismissible: true /}
+	    {param body: $body /}
+		{param closeButtonHtml: $closeButtonHtml /}
+		{param elementClasses: 'alert-success' /}
+	{/call}
+
+	{call Select.render}
+	    {param label: 'Select' /}
+	    {param items: ['GET', 'HEAD', 'POST', 'PATCH', 'PUT', 'DELETE'] /}
+	    {param hiddenFieldName: 'method' /}
+	{/call}
+
+	<div class="container-fluid-1280" id="{$id}">
+
+		<div class="row">
+			<div class="table-responsive">
+
+				<table class="table table-autofit table-heading-nowrap table-list">
+				<thead>
+					<tr>
+						<th class="lfr-name-column table-cell-content"> Nome</th> 
+						<th class="lfr-entry-action-column "> &nbsp; </th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{if length($groups) > 0}
+						{foreach $group in $groups}
+							<tr>
+								<td class=" lfr-entry-action-column" colspan="1">{$group.name}</td>
+								<td class=" lfr-entry-action-column" colspan="1">
+
+									<a class="btn" href="{$group.editGroupURL}">
+										<span class="icon-pencil"></span>
+									</a>
+
+									<form action="{$group.deleteGroupURL}" method="POST" enctype="multipart/form-data">
+										<button class="btn delete" type="submit">
+											<span class="icon-trash"></span>
+										</button>
+									</form>
+
+								</td>
+							</tr>
+						{/foreach}
+					{else}
+						<tr>
+							<td class=" lfr-entry-action-column" colspan="2">
+							Not exists Groups.
+							</td>
+						</tr>
+					{/if}
+				</tbody>
+				</table>
+			</div>
+		</div>
+
+		{if $addGroupURL}
+			<div class="button-row">
+				<a class="btn btn-action btn-bottom-right btn-primary" href="{$addGroupURL}">
+					<span class="">
+						<svg class="lexicon-icon lexicon-icon-plus" focusable="false" role="img" title="" viewBox="0 0 512 512">
+							<path class="lexicon-icon-outline" d="M479.82 224.002h-192.41v-191.91c0-17.6-14.4-32-32-32v0c-17.6 0-32 14.4-32 32v191.91h-191.41c-17.6 0-32 14.4-32 32v0c0 17.6 14.4 32 32 32h191.41v191.91c0 17.6 14.4 32 32 32v0c17.6 0 32-14.4 32-32v-191.909h192.41c17.6 0 32-14.4 32-32v0c0-17.6-14.4-32-32-32z"></path>
+						</svg>
+					</span>				
+				</a>
+			</div>
+		{/if}
+
+	</div>	
+
+{/template}

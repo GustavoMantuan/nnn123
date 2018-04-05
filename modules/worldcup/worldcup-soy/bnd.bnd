@@ -1,0 +1,16 @@
+Bundle-Name: worldcup-soy
+Bundle-SymbolicName: br.com.objective.worldcup.soy
+Bundle-Version: 1.0.0
+Web-ContextPath: /worldcup-soy
+Liferay-Export-JS-Submodules:\
+	html2incdom,\
+	incremental-dom*,\
+	metal*
+Provide-Capability:\
+	soy;\
+		type="worldcup-soy";\
+		version:Version="1.0.0"
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
+-includeresource: package.json

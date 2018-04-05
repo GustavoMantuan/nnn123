@@ -1,0 +1,4 @@
+Bundle-Name: worldcup-web
+Bundle-SymbolicName: br.com.objective.worldcup
+Bundle-Version: 1.0.0
+Export-Package: br.com.objective.worldcup.constants

@@ -1,0 +1,14 @@
+{
+	"dependencies": {
+		"metal-component": "2.16.3",
+		"metal-soy": "2.16.4",
+		"metal-alert": "2.1.0",
+		"metal-select": "2.1.0"
+	},
+	"devDependencies": {
+		"liferay-module-config-generator": "^1.3.2",
+		"metal-cli": "^4.3.3"
+	},
+	"name": "worldcup-soy",
+	"version": "1.0.0"
+}

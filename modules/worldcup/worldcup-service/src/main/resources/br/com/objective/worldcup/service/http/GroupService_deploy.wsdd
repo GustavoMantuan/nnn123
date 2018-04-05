@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_WorldCup_GroupService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.worldcup.objective.com.br" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="helloWorld" qname="operNS:helloWorld" returnQName="helloWorldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="worldName" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="helloWorld" />
+		<parameter name="className" value="br.com.objective.worldcup.service.http.GroupServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="GroupServiceSoap" />
+		<parameter name="wsdlServiceElement" value="GroupServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_WorldCup_GroupService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.worldcup.objective.com.br" />
+	</service>
+</deployment>

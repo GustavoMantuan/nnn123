@@ -1,0 +1,193 @@
+dependencies {
+	compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.1.0"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.42.0"
+	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+
+	compileOnly project(":modules:worldcup:worldcup-api")
+
+}
+
+//afterEvaluate {
+//	transpileJS {
+//		soyDependencies = []
+//	}
+//}
+
+configJSModules {
+//	dependsOn transpileJS
+	include "**/*.js*"
+	moduleFormat "/.soy/g,.soy.js"
+}
+
+//transpileJS {
+//	skipWhenEmpty = false
+//	sourceDir = npmInstall.nodeModulesDir
+//	soySrcIncludes = "metal*/src/**/*.soy"
+//	srcIncludes = "metal*/src/**/*.js"
+//}
+
+// transpileJS {
+// 	srcIncludes = ["clay*/**/*.es.js", "**/*.es.js"]
+// 	soySrcIncludes = ["clay*/**/*.soy", "**/*.soy"]
+// }
+//
+// configJSModules {
+// 	moduleFormat "/.soy/g,.soy.js"
+// }
+//
+// afterEvaluate {
+// 	transpileJS {
+// 		soyDependencies = []
+// 	}
+// }
+
+
+//
+//task buildClayComponents(type: Copy)
+//
+//processResources {
+//	dependsOn buildClayComponents
+//}
+//
+//buildClayComponents {
+//	dependsOn npmInstall
+//	from npmInstall.nodeModulesDir
+//	include "clay-component/dist/clay-component.min.css"
+//	include "clay-component/dist/clay-component.min.js"
+//	includeEmptyDirs = false
+//	into "${sourceSets.main.output.resourcesDir}/META-INF/resources"
+//}
+
+
+
+
+
+//afterEvaluate {
+//	transpileJS {
+//		soyDependencies = []
+//	}
+//}
+//
+//configJSModules {
+//	dependsOn transpileJS
+//	include "**/*.js*"
+//	moduleFormat "/.soy/g,.soy.js"
+//}
+//
+//transpileJS {
+//	skipWhenEmpty = false
+//	sourceDir = npmInstall.nodeModulesDir
+//	soySrcIncludes = "clay*/src/**/*.soy"
+//	srcIncludes = "clay*/src/**/*.js"
+//}
+
+// --------------------------------------------
+//afterEvaluate {
+//	transpileJS {
+//		soyDependencies = []
+//	}
+//}
+//
+//configJSModules {
+//	dependsOn transpileJS
+//	include "**/*.js*"
+//	moduleFormat "/.soy/g,.soy.js"
+//}
+//
+//transpileJS {
+//	skipWhenEmpty = false
+//	sourceDir = npmInstall.nodeModulesDir
+//	soySrcIncludes = "clay*/src/**/*.soy"
+//	srcIncludes = "clay*/src/**/*.js"
+//}
+
+
+
+
+
+// transpileJS {
+// 	srcIncludes = "**/*.es.js,clay*/src/**/*.js"
+// 	soySrcIncludes = "**/*.soy,,clay*/src/**/.soy"
+// }
+// configJSModules {
+// 	moduleFormat "/.soy/g,.soy.js"
+// }
+
+// afterEvaluate {
+// 	transpileJS {
+// 		soyDependencies = []
+// 	}
+// }
+// configJSModules {
+// 	dependsOn transpileJS
+// 	include "**/*.js*"
+// 	moduleFormat "/.soy/g,.soy.js"
+// }
+// transpileJS {
+// 	skipWhenEmpty = false
+// 	sourceDir = npmInstall.nodeModulesDir
+// 	soySrcIncludes = ["metal*/src/**/*.soy","clay*/src/**/*.soy"]
+// 	srcIncludes = ["metal*/src/**/*.js", "clay*/src/**/*.js"]
+// }
+
+//transpileJS {
+//	soySrcIncludes = ["clay*/**/*.soy", "*/**/*.soy"]
+//	srcIncludes = ["clay*/**/*.es.js", "**/*.es.js"]
+//}
+//configJSModules {
+//	includes = ["clay*/**/*.es.js*", "**/*.es.js*"]
+//}
+//transpileJS {
+//	soySrcIncludes = ["clay*/**/*.soy", "*/**/*.soy"]
+//	srcIncludes = ["clay*/**/*.es.js", "clay*/**/*.es.js"]
+//}
+
+// transpileJS {
+// 	soySrcIncludes = "**/*.soy"
+// 	srcIncludes = "**/*.es.js"
+// }
+// configJSModules {
+// 	include "**/*.js*"
+// }
+// transpileJS {
+// 	soySrcIncludes = "**/*.soy"
+// 	srcIncludes = "**/*.es.js"
+// }
+
+// transpileJS {
+//     srcIncludes = "**/*.es.js"
+//     soySrcIncludes = "**/*.soy"
+// }
+// configJSModules {
+//     moduleFormat "/.soy/g,.soy.js"
+// }
+
+// transpileJS {
+//     srcIncludes = "**/*.js"
+//     soySrcIncludes = "**/*.soy"
+// }
+// configJSModules {
+//     moduleFormat "/.soy/g,.soy.js"
+// }
+
+// classes {
+// 	dependsOn buildSoy
+// 	dependsOn wrapSoyTemplates
+// }
+// transpileJS {
+// 	soySrcIncludes = ""
+// 	srcIncludes = "**/*.es.js"
+// }
+// wrapSoyTemplates {
+// 	doLast {
+// 		FileTree soyJsFileTree = fileTree(dir: "build", include: "**/*.soy.js")
+// 		String soyJsWrapperHeader = "AUI.add('liferay-ddm-form-field-time-template', function(A) {"
+// 		String soyJsWrapperFooter = "}, '', {requires: ['soyutils']});";
+// 		soyJsFileTree.each {
+// 			File soyJsFile ->
+// 			soyJsFile.text = soyJsWrapperHeader + soyJsFile.text.replace("(typeof ddm == 'undefined') { var ddm = {}; }", "(typeof ddm == 'undefined') { window.ddm = {}; }") + soyJsWrapperFooter
+// 		}
+// 	}
+// }
