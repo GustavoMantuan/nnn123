@@ -1,0 +1,89 @@
+{namespace EditFoo}
+
+/**
+ * Prints the portlet main view.
+ */
+{template .render}
+	{@param id: string}
+	{@param portletNamespace: string}
+	{@param? grpId: string}
+	{@param? field1: string}
+	{@param? field2: bool}
+	{@param? field3: int}
+    {@param? field4: string}
+    {@param? field5: string}
+    {@param createFooActionURL: string}
+
+    <div id="{$id}">
+
+        <h3>Fill the form and hit the confirm button!</h3>
+
+        <form name="frm" method="post" action="{$createFooActionURL}">
+            <input type="hidden" name="{$portletNamespace}grpId" value="{$grpId}"/>
+
+            <div class="form-group">
+                <label>
+                   Default name for Foo
+                <span class="reference-mark text-warning">
+               <span class="icon-asterisk"></span>
+            </span>
+                </label>
+                <input class="form-control" placeholder="Name" type="text" name="{$portletNamespace}field1" value="{$field1}" maxlength="75">
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="{$portletNamespace}field2" value="{$field2}">
+                   Is this foo a nice guy?
+                </label>
+            </div>
+
+
+            <div class="form-group">
+                <label>
+                    The value of Foo
+                    <span class="reference-mark text-warning">
+              <span class="icon-asterisk"></span>
+            </span>
+                </label>
+                <input class="form-control" type="number" name="{$portletNamespace}field3" value="{$field3}" min="0">
+            </div>
+
+
+            <div class="form-group">
+                <label>
+                    Date of Foo creation
+                    <span class="reference-mark text-warning">
+               <span class="icon-asterisk"></span>
+            </span>
+                </label>
+                <input class="form-control" type="date" name="{$portletNamespace}field4" value="{$field4}" min="0">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    A short description about Foo
+                    <span class="reference-mark text-warning">
+          <span class="icon-asterisk"></span>
+            </span>
+                </label>
+                <input class="form-control" placeholder="Description" type="text" name="{$portletNamespace}field5" value="{$field5}" maxlength="75">
+            </div>
+
+
+
+            <div class="button-holder ">
+                <button class="btn btn-primary btn-default" type="submit">
+                    <span class="lfr-btn-label">Confirm</span>
+                </button>
+
+                <a class="btn btn-cancel btn-default btn-link">
+                    <span class="lfr-btn-label">Cancel</span>
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+{/template}

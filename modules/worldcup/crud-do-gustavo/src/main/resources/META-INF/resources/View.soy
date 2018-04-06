@@ -1,0 +1,105 @@
+{namespace View}
+
+/**
+ * Prints the portlet main view.
+ */
+{template .render}
+	{@param id: string}
+	{@param? EditFooUrl: string}
+    {@param ListFoos: list<[
+            fooId: int,
+            field1: string,
+            field2: bool,
+            field3: int,
+            field4: string,
+            editUrl: string,
+            deleteUrl: string
+    ]>}
+
+	{let $body kind="html"}
+        <b>Success</b>
+	{/let}
+
+	{let $closeButtonHtml kind="html"}
+        <span class="icon-16-cancel"></span>
+	{/let}
+
+//	{call Alert.render}
+//		{param dismissible: true /}
+//		{param body: $body /}
+//		{param closeButtonHtml: $closeButtonHtml /}
+//		{param elementClasses: 'alert-success' /}
+//	{/call}
+
+//	{call Select.render}
+//		{param label: 'Select' /}
+//		{param items: ['GET', 'HEAD', 'POST', 'PATCH', 'PUT', 'DELETE'] /}
+//		{param hiddenFieldName: 'method' /}
+//	{/call}
+
+    <div class="container-fluid-1280" id="{$id}">
+
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-autofit table-hover table-list">
+                    <thead>
+                    <tr>
+                        <th class="table-cell-content"> Id</th>
+                        <th class="table-cell-content"> Name</th>
+                        <th class="table-cell-content"> Cool guy?</th>
+                        <th class="table-cell-content"> Value</th>
+                        <th class="table-cell-content"> Date </th>
+                        <th class="table-cell-content"> </th>
+                        <th class="lfr-entry-action-column "> &nbsp; </th>
+                        <th class="lfr-entry-action-column "> &nbsp; </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {if length($ListFoos) > 0}
+                            {foreach $foo in $ListFoos}
+                            <tr>
+                                <td class="lfr-entry-action-column">
+                                    <a class="btn" href="{$foo.editUrl}">
+                                        {$foo.fooId}
+                                        <span class="icon-pencil"></span>
+                                    </a>
+                                </td>
+                                <td class="table-cell-content">{$foo.field1}</td>
+                                <td class="table-cell-content">{$foo.field2 ? 'Yes' : 'No'}</td>
+                                <td class="table-cell-content">{$foo.field3}</td>
+                                <td class="table-cell-content">{$foo.field4}</td>
+                                <td class="lfr-entry-action-column" colspan="1">
+                                    <button class="btn delete" type="submit">
+                                        <span class="icon-trash"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            {/foreach}
+                        {else}
+                        <tr>
+                            <td class=" lfr-entry-action-column" colspan="2">
+                                No datta available.
+                            </td>
+                        </tr>
+                        {/if}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+		{if $EditFooUrl}
+//            <div class="button-row">
+//                <a class="btn btn-action btn-bottom-right btn-primary" href="{$EditFooUrl}">
+//					<span class="">
+//						<svg class="lexicon-icon lexicon-icon-plus" focusable="false" role="img" title="" viewBox="0 0 512 512">
+//							<path class="lexicon-icon-outline" d="M479.82 224.002h-192.41v-191.91c0-17.6-14.4-32-32-32v0c-17.6 0-32 14.4-32 32v191.91h-191.41c-17.6 0-32 14.4-32 32v0c0 17.6 14.4 32 32 32h191.41v191.91c0 17.6 14.4 32 32 32v0c17.6 0 32-14.4 32-32v-191.909h192.41c17.6 0 32-14.4 32-32v0c0-17.6-14.4-32-32-32z"></path>
+//						</svg>
+//					</span>
+//                </a>
+//            </div>
+		{/if}
+
+    </div>
+
+{/template}

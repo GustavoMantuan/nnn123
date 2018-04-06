@@ -55,17 +55,9 @@ public class GroupsPortletListMVCRenderCommand
 
 		template.put("pathThemeImages", themeDisplay.getPathThemeImages());
 
-		List<Group> groups = getGroupLocalService().getGroups(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
 		template.put("addGroupURL", getAddGroupURL(renderResponse));
 
-		template.put("groups",
-				groups
-					.stream()
-					.map(g -> toData(g, renderResponse))
-					.collect(Collectors.toList()));
-
-//		template.put("portletNamespace", renderResponse.getNamespace());
 
 		return "ListGroup";
 	}

@@ -1,0 +1,9 @@
+Bundle-Name: ServiceBuilderGustavo-api
+Bundle-SymbolicName: objective.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	objective.exception,\
+	objective.model,\
+	objective.service,\
+	objective.service.persistence
+-includeresource: META-INF/service.xml=../ServiceBuilderGustavo-service/service.xml

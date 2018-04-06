@@ -1,0 +1,16 @@
+Bundle-Name: crud-do-gustavo
+Bundle-SymbolicName: br.com.objective.gustavo.soy
+Bundle-Version: 1.0.0
+Web-ContextPath: /crud-do-gustavo
+Liferay-Export-JS-Submodules:\
+	html2incdom,\
+	incremental-dom*,\
+	metal*
+Provide-Capability:\
+	soy;\
+		type="crud-do-gustavo";\
+		version:Version="1.0.0"
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
+-includeresource: package.json

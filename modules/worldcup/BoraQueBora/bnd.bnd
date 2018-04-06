@@ -1,0 +1,17 @@
+Bundle-Name: BoraQueBora
+Bundle-SymbolicName: boraquebora
+Bundle-Version: 1.0.0
+Export-Package: boraquebora.constants
+Web-ContextPath: /BoraQueBora
+Liferay-Export-JS-Submodules:\
+	html2incdom,\
+	incremental-dom*,\
+	metal*
+Provide-Capability:\
+	soy;\
+		type="BoraQueBora";\
+		version:Version="1.0.0"
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
+-includeresource: package.json
